@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tuttosuidroni.it/schemas/traffic-object.schema.json",
+  "title": "Drone Sky Check Traffic Object",
+  "description": "Schema for UAS / Remote ID traffic objects ingested by Drone Sky Check",
+  "type": "object",
+  "required": [
+    "source",
+    "objectId",
+    "lat",
+    "lon"
+  ],
+  "properties": {
+    "source": {
+      "type": "string",
+      "description": "Feeder identifier (unique per data source)",
+      "minLength": 1
+    },
+    "objectId": {
+      "type": "string",
+      "description": "Unique object identifier inside the feeder",
+      "minLength": 1
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of traffic object",
+      "enum": [
+        "drone"
+      ],
+      "default": "drone"
+    },
+    "lat": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90,
+      "description": "Latitude in decimal degrees"
+    },
+    "lon": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180,
+      "description": "Longitude in decimal degrees"
+    },
+    "altitude": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Altitude above ground or mean sea level (meters)"
+    },
+    "speed": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "Ground speed in meters per second"
+    },
+    "heading": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 360,
+      "description": "Track or heading in degrees"
+    },
+    "model": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Drone or Remote ID device model"
+    }
+  },
+  "additionalProperties": false
+}
