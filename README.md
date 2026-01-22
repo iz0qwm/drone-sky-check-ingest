@@ -6,6 +6,9 @@ This repository documents how external hardware or software systems can feed
 drone traffic data into **Drone Sky Check**, a safety-oriented situational
 awareness platform.
 
+https://droneskycheck-d0136.web.app/
+https://apps.apple.com/it/app/drone-sky-check/id6757807678
+
 ---
 
 ## What this is
